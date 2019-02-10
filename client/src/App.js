@@ -3,7 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import Fib from './Fib';
-import OtherPage from "./OtherPage";
+import OtherPage from './OtherPage';
 
 class App extends Component {
   render() {
@@ -18,7 +18,7 @@ class App extends Component {
           </header>
           <div>
             <Route exact path="/" component={Fib} />
-            <Route exact path="/otherpage" component={OtherPage} />
+            <Route path="/otherpage" component={OtherPage} />
           </div>
         </div>
       </Router>
