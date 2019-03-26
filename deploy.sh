@@ -1,16 +1,16 @@
 #!/bin/bash
 
-docker build -t lashakitia/multi-client:latest -t lashakitia/mutli-client:$SHA -f ./client/Dockerfile ./client
-docker build -t lashakitia/multi-server:latest -t lashakitia/mutli-server:$SHA -f ./server/Dockerfile ./server
-docker build -t lashakitia/multi-worker:latest -t lashakitia/mutli-worker:$SHA -f ./worker/Dockerfile ./worker
+docker build -t lashakitia/multi-client:latest -t lashakitia/multi-client:$SHA -f ./client/Dockerfile ./client
+docker build -t lashakitia/multi-server:latest -t lashakitia/multi-server:$SHA -f ./server/Dockerfile ./server
+docker build -t lashakitia/multi-worker:latest -t lashakitia/multi-worker:$SHA -f ./worker/Dockerfile ./worker
 
-docker push lashakitia/multi-client:latest
-docker push lashakitia/multi-server:latest
-docker push lashakitia/multi-worker:latest
+docker push lashakiita/multi-client:latest
+docker push lashakiita/multi-server:latest
+docker push lashakiita/multi-worker:latest
 
-docker push lashakitia/mutli-client:$SHA
-docker push lashakitia/mutli-server:$SHA
-docker push lashakitia/mutli-worker:$SHA
+docker push lashakitia/multi-client:$SHA
+docker push lashakitia/multi-server:$SHA
+docker push lashakitia/multi-worker:$SHA
 
 kubectl apply -f k8s/
 kubectl set image deployments/client-deployment client=lashakitia/multi-client:$SHA
