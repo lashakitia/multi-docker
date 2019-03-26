@@ -13,6 +13,6 @@ docker push lashakitia/mutli-server:$SHA
 docker push lashakitia/mutli-worker:$SHA
 
 kubectl apply -f k8s/
-kubectl set image deployments/client-deployment server=lashakitia/multi-client:$SHA
+kubectl set image deployments/client-deployment client=lashakitia/multi-client:$SHA
 kubectl set image deployments/server-deployment server=lashakitia/multi-server:$SHA
-kubectl set image deployments/worker-deployment server=lashakitia/multi-worker:$SHA
+kubectl set image deployments/worker-deployment worker=lashakitia/multi-worker:$SHA
